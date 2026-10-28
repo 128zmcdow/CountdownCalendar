@@ -4,3 +4,36 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/bro.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 0 8%;
+    position: relative;
+}
+.logo{
+    width: 120px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.content{
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color: #fff;
+}
+.content h1{
+    font-size: 64px;
+    font-weight: 600;
+}
+.content h1 span{
+    color: chocolate;
+}
+.launch-time{
+    display: flex;
+}
+.launch-time div{
+    display: flex;
+}
