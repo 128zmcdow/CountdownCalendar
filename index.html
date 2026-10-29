@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halloween Countdown</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Eater&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="container">
-    <img src="img/creepsville-free-halloween-fonts-57a207c15f9b589aa9dc406d.jpg" class="logo" height="50px" width="100px">
 
-    <div class="content">
-        <p>Countdown to October 31st</p>
-        <h1>Halloween is <span>Coming</span></h1>
-        <div class="launch-time">
-            <div>
-                <p>00</p>
-                <span>Days</span>
-            </div>
-            <div>
-                <p>00</p>
-                <span>Hours</span>
-            </div>
-            <div>
-                <p>00</p>
-                <span>Minutes</span>
-            </div>
-            <div>
-                <p>00</p>
-                <span>Seconds</span>
+<body>
+    <div class="container">
+        <img src="img/creepsville-free-halloween-fonts-57a207c15f9b589aa9dc406d.jpg" class="logo" height="50px"
+            width="100px">
+
+        <div class="content">
+            <p class="creep">Countdown to October 31st</p>
+            <h1 class="eater">Halloween is <span>Coming</span></h1>
+            <div class="launch-time">
+                <div>
+                    <p id="days" class="dynapuff">00</p>
+                    <span class="dynapuff">Days</span>
+                </div>
+                <div>
+                    <p id="hours" class="dynapuff">00</p>
+                    <span class="dynapuff">Hours</span>
+                </div>
+                <div>
+                    <p id="minutes" class="dynapuff">00</p>
+                    <span class="dynapuff">Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds" class="dynapuff">00</p>
+                    <span class="dynapuff">Seconds</span>
+                </div>
             </div>
         </div>
+        <img src="img/Large_Transparent_Halloween_Pumpkin_Clipart.png" class="pumpkin" height="400px" width="400px">
     </div>
-    <img src="img/Large_Transparent_Halloween_Pumpkin_Clipart.png" class="pumpkin" height="400px" width="400px">
-</div>
+
+    <script>
+        var countDownDate = new Date("Oct 31, 2026 00:00:00").getTime();
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        }, 1000)
+    </script>
 
     <script src="js/index.js"></script>
 </body>
+
 </html>
